@@ -1,0 +1,31 @@
+.task_form {
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 500px;
+}
+h2 {
+    text-align: center;
+}
+form label {
+    align-content: center;
+    padding: 30px;
+    font-size: 2em;
+    font-weight: bold;
+}
+input {
+    font-size: 175%;
+    line-height: 1,15;
+    border-radius: 5px;
+    padding: 10px 10px;
+    margin: 5px;
+    text-align: center;
+}
+.btn {
+    padding: 10px 40px;
+    font-size: 150%;
+    border-radius: 20px;
+    margin: 10px;
+}
