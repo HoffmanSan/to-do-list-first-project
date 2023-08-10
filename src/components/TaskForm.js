@@ -4,12 +4,13 @@ import { useState } from 'react'
 // styles
 import './taskForm.css'
 
-export default function TaskForm() {
+export default function TaskForm({ addTask={addTask} }) {
     const [newTask, setNewTask] = useState('')
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(newTask)
+        addTask(newTask)
+        setNewTask('')
     }
 
   return (
