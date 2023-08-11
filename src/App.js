@@ -38,10 +38,14 @@ function App() {
     setCurrentTasks(tasksAfterDeletion);
   }
 
+  const addTask = (newTask) => {
+    setCurrentTasks([ ...currentTasks, {id: nanoid(), name: newTask, completed: false }])
+  }
+
   return (
     <div className="App">
       <h1>Bucket List</h1>
-      <TaskForm />
+      <TaskForm addTask={addTask}/>
       <TaskList currentTasks={currentTasks} toggleTaskCompleted={toggleTaskCompleted} handleDelete={handleDelete}/>
     </div>
   );
