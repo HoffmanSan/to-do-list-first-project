@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/react-gh-pages/static/css/main.94c3cc94.css",
-    "main.js": "/react-gh-pages/static/js/main.ce14816a.js",
-    "index.html": "/react-gh-pages/index.html",
-    "static/media/checkmark.svg": "/react-gh-pages/static/media/checkmark.f3c8f3599e43987a58658b83e30b9369.svg",
-    "main.94c3cc94.css.map": "/react-gh-pages/static/css/main.94c3cc94.css.map",
-    "main.ce14816a.js.map": "/react-gh-pages/static/js/main.ce14816a.js.map"
+    "main.css": "/to-do-list-first-project/static/css/main.94c3cc94.css",
+    "main.js": "/to-do-list-first-project/static/js/main.67550201.js",
+    "index.html": "/to-do-list-first-project/index.html",
+    "static/media/checkmark.svg": "/to-do-list-first-project/static/media/checkmark.f3c8f3599e43987a58658b83e30b9369.svg",
+    "main.94c3cc94.css.map": "/to-do-list-first-project/static/css/main.94c3cc94.css.map",
+    "main.67550201.js.map": "/to-do-list-first-project/static/js/main.67550201.js.map"
   },
   "entrypoints": [
     "static/css/main.94c3cc94.css",
-    "static/js/main.ce14816a.js"
+    "static/js/main.67550201.js"
   ]
 }
