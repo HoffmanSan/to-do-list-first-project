@@ -6,19 +6,23 @@ import './taskForm.css'
 
 export default function TaskForm({ addTask={addTask} }) {
     const [newTask, setNewTask] = useState('')
+    const [error, setError] = useState(false)
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        if (!newTask) {
+            setError(true)
+            return
+        }
         addTask(newTask)
         setNewTask('')
+        setError(false)
     }
 
   return (
     <form onSubmit={handleSubmit} className="task_form">
         <h2>
-            <label htmlFor="task_form_input">
-                Add new task
-            </label>
+            <label htmlFor="task_form_input">Add new task</label>
         </h2>
         <input
             type="text"
@@ -27,9 +31,8 @@ export default function TaskForm({ addTask={addTask} }) {
             onChange={(e) => setNewTask(e.target.value)}
             value={newTask}
         />
-        <button className="btn" type="submit">
-            Add
-        </button>
+        {error && <p className="error_paragraph">Please add a task name</p>}
+        <button type="submit">Add</button>
     </form>
   )
 }

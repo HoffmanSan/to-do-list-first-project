@@ -1,13 +1,14 @@
 // imports
-import { nanoid } from 'nanoid'
+import { nanoid } from 'nanoid';
 import { useState } from 'react';
+import CheckIcon from './assets/checkmark.svg'
 
 // styles
 import './App.css';
 
 // components
-import TaskForm from './components/TaskForm'
-import TaskList from './components/TaskList';
+import TaskForm from './components/TaskForm';
+import TaskList from './components/taskList';
 
 const CURRENT_TASKS = [
   {id: nanoid(), name: 'Eat', completed: false},
@@ -15,8 +16,27 @@ const CURRENT_TASKS = [
   {id: nanoid(), name: 'Repeat', completed: false}
 ]
 
+const FILTERS = ['Completed', 'All',  "Uncompleted"]
+
 function App() {
   const [currentTasks, setCurrentTasks] = useState(CURRENT_TASKS)
+  const [filter, setFilter] = useState('All')
+
+  const filteredTasks = currentTasks.filter(task => {
+    switch (filter) {
+      case 'Completed':
+        if (task.completed) {
+          return true;
+        } 
+          return false;
+      case 'Uncompleted':
+        if (!task.completed) {
+          return true;
+        }
+          return false;
+      default:
+          return true;
+    }})
 
   const toggleTaskCompleted = (id) => {
     const completeToggledTasks = currentTasks.map(task => {
@@ -44,9 +64,17 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Bucket List</h1>
-      <TaskForm addTask={addTask}/>
-      <TaskList currentTasks={currentTasks} toggleTaskCompleted={toggleTaskCompleted} handleDelete={handleDelete}/>
+      <div className="header">
+        <h1>Bucket List</h1>
+        <img className="list_icon" src={CheckIcon} alt="list icon" />
+      </div>
+      <TaskForm addTask={addTask} />
+      <div className="filter_buttons">
+        {FILTERS.map(filterName => (
+        <button key={filterName} className={filterName === filter ? 'active' : ''}onClick={() => setFilter(filterName)}>{filterName}</button>
+        ))}
+      </div>
+      <TaskList currentTasks={filteredTasks} toggleTaskCompleted={toggleTaskCompleted} handleDelete={handleDelete} filter={filter}/>
     </div>
   );
 }
