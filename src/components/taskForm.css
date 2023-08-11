@@ -1,31 +1,40 @@
 .task_form {
-    background-color: lightblue;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-width: 500px;
+    width: 500px;
+    padding: 10px;
+    border: 2px solid #8d69f1;
+    border-radius: 50px;
 }
-h2 {
-    text-align: center;
+.task_form button {
+    margin-top: 10px;
+    padding: 10px 30px;
 }
-form label {
+.task_form label {
     align-content: center;
     padding: 30px;
     font-size: 2em;
     font-weight: bold;
+    cursor: pointer;
 }
-input {
+.task_form input {
     font-size: 175%;
-    line-height: 1,15;
+    font-weight: bold;
+    border: 2px solid #8d69f1;
+    color: #8d69f1;
     border-radius: 10px;
     padding: 10px 10px;
     margin: 5px;
     text-align: center;
+    cursor: pointer;
 }
-.btn {
-    padding: 10px 40px;
-    font-size: 150%;
-    border-radius: 20px;
-    margin: 10px;
+.error_paragraph {
+    color: red;
+    background: pink;
+    border: 1px solid red;
+    border-radius: 4px;
+    padding: 8px;
+    margin: 10px 0;
 }
